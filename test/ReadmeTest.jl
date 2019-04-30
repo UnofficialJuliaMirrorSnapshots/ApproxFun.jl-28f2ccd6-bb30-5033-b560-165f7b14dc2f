@@ -7,7 +7,6 @@ using ApproxFun, SpecialFunctions, LinearAlgebra, Test
         f = sin(x^2)
         g = cos(x)
 
-
         @test ≈(f(.1),sin(.1^2);atol=1000eps())
 
         h = f + g^2
@@ -120,7 +119,8 @@ using ApproxFun, SpecialFunctions, LinearAlgebra, Test
         @test ≈(u(0.1,0.2),-0.02768276827514463;atol=1E-8)
     end
 
-    @testset "BigFloat" begin
+    # @testset "BigFloat" begin
+    @test_skip begin
         setprecision(1000) do
             d=BigFloat(0)..BigFloat(1)
             D=Derivative(d)
