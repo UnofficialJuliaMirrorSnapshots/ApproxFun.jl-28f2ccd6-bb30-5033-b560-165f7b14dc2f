@@ -1,9 +1,9 @@
-using Documenter, ApproxFun, BandedMatrices, LinearAlgebra
+using Documenter, ApproxFun, BandedMatrices, DomainSets, LinearAlgebra
 
-makedocs(modules=[ApproxFun],
+makedocs(
 			doctest = false,
 			clean = true,
-			format = :html,
+			format = Documenter.HTML(),
 			sitename = "ApproxFun.jl",
 			authors = "Sheehan Olver",
 			pages = Any[
@@ -22,11 +22,5 @@ makedocs(modules=[ApproxFun],
 
 
 deploydocs(
-    repo   = "github.com/JuliaApproximation/ApproxFun.jl.git",
-    latest = "development",
-    julia  = "0.7",
-    osname = "linux",
-    target = "build",
-    deps   = nothing,
-    make   = nothing
+    repo   = "github.com/JuliaApproximation/ApproxFun.jl.git"
     )
