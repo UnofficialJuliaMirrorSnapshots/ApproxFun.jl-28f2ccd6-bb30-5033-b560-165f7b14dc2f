@@ -11,7 +11,6 @@ julia:
 matrix:
   allow_failures:
     - julia: nightly
-    - julia: "1.2"    
 notifications:
   email: false
 after_script:
@@ -22,4 +21,4 @@ codecov: true
 # uncomment the following lines to override the default test script
 script:
   - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
-  - travis_wait 20 julia --project -e 'using Pkg; Pkg.build(); Pkg.test(; coverage=true)';
+  - travis_wait 30 julia --project -e 'using Pkg; Pkg.build(); Pkg.test(; coverage=true)';
